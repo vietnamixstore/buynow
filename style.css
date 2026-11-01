@@ -1,0 +1,953 @@
+
+:root {
+    --red: #e63b2e;
+    --black: #111111;
+    --white: #f4f2ed;
+    --gray: #777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    background: var(--white);
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, select {
+    font: inherit;
+    cursor: pointer;
+}
+
+/* TOP BAR */
+
+.announcement {
+    background: var(--red);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* HEADER */
+
+.header {
+    height: 82px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.logo small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.navigation {
+    display: flex;
+    gap: 27px;
+}
+
+.navigation a {
+    font-size: 11px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.navigation a:hover {
+    color: var(--red);
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.header-right button {
+    border: none;
+    background: none;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+#searchButton {
+    font-size: 24px;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 22px;
+}
+
+/* HERO */
+
+.hero {
+    background: #151515;
+    color: white;
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 80px 8%;
+    overflow: hidden;
+}
+
+.hero-content {
+    align-self: center;
+    z-index: 2;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.eyebrow span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 8vw, 105px);
+    font-weight: 900;
+    line-height: .95;
+    letter-spacing: -7px;
+    margin-top: 25px;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero-content > p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 2;
+    max-width: 410px;
+    margin: 30px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.btn-white {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 17px 22px;
+    font-size: 10px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.btn-white:hover {
+    background: var(--red);
+    color: white;
+}
+
+.btn-text {
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.hero-footer {
+    display: flex;
+    gap: 30px;
+    margin-top: 65px;
+    font-size: 8px;
+    color: #777;
+    letter-spacing: 2px;
+}
+
+/* HERO SHIRT */
+
+.hero-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 440px;
+}
+
+.hero-circle {
+    width: 390px;
+    height: 390px;
+    border: 1px solid #ffffff25;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.hero-shirt {
+    width: 250px;
+    height: 320px;
+    background: linear-gradient(120deg, #eee, #aaa, #fff);
+    clip-path: polygon(
+        25% 0, 40% 0, 45% 8%, 55% 8%, 60% 0,
+        75% 0, 100% 18%, 86% 42%, 77% 34%,
+        77% 100%, 23% 100%, 23% 34%,
+        14% 42%, 0 18%
+    );
+    display: grid;
+    place-items: center;
+    color: #111;
+    transform: rotate(-7deg);
+    filter: drop-shadow(15px 25px 20px #0008);
+}
+
+.shirt-design {
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.shirt-design strong {
+    font-size: 42px;
+    color: var(--red);
+}
+
+.shirt-design small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.shirt-tag {
+    position: absolute;
+    bottom: 50px;
+    right: 45px;
+    background: var(--red);
+    color: white;
+    padding: 7px;
+    font-size: 10px;
+}
+
+.hero-note {
+    position: absolute;
+    right: -5%;
+    bottom: 20%;
+    color: #888;
+    font-size: 9px;
+    writing-mode: vertical-rl;
+}
+
+/* TICKER */
+
+.ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--red);
+    color: white;
+    padding: 16px;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.ticker div {
+    animation: ticker 25s linear infinite;
+}
+
+@keyframes ticker {
+    to {
+        transform: translateX(-30%);
+    }
+}
+
+/* SECTION */
+
+.section {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.section-heading h2,
+.collection h2,
+.nfc h2 {
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 1.1;
+    margin-top: 15px;
+}
+
+.section-heading h2 span,
+.collection h2 span,
+.nfc h2 span {
+    color: var(--red);
+}
+
+.view-all {
+    font-size: 10px;
+    font-weight: 800;
+    border-bottom: 1px solid;
+    padding-bottom: 8px;
+}
+
+.section-description {
+    color: var(--gray);
+    font-size: 12px;
+    margin: 20px 0 40px;
+}
+
+/* CATEGORY */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+}
+
+.category {
+    height: 340px;
+    padding: 22px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .3s;
+}
+
+.category:hover {
+    transform: translateY(-7px);
+}
+
+.category > span {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.category h3 {
+    font-size: 29px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.category small {
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.football {
+    background: linear-gradient(140deg, #314c55, #111);
+}
+
+.anime {
+    background: linear-gradient(140deg, #aa5349, #21131b);
+}
+
+.couple {
+    background: linear-gradient(140deg, #a77b86, #35212c);
+}
+
+.vietnam {
+    background: linear-gradient(140deg, #947047, #24170f);
+}
+
+/* COLLECTION */
+
+.collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #dedbd4;
+}
+
+.collection-art {
+    min-height: 500px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background: linear-gradient(135deg, #bbb8ae, #eee);
+}
+
+.collection-shirt {
+    width: 240px;
+    height: 300px;
+    background: linear-gradient(120deg, #111, #333);
+    clip-path: polygon(
+        25% 0, 40% 0, 45% 8%, 55% 8%, 60% 0,
+        75% 0, 100% 18%, 86% 42%, 77% 34%,
+        77% 100%, 23% 100%, 23% 34%,
+        14% 42%, 0 18%
+    );
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: white;
+    transform: rotate(6deg);
+}
+
+.collection-shirt strong {
+    color: #e2a34b;
+    font-size: 23px;
+}
+
+.collection-art > small {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    font-size: 9px;
+}
+
+.collection-content {
+    align-self: center;
+    padding: 70px 12%;
+}
+
+.collection-content p,
+.nfc-content > p {
+    font-size: 12px;
+    line-height: 2;
+    color: #666;
+    margin: 25px 0;
+}
+
+.btn-black {
+    display: inline-block;
+    padding: 17px 20px;
+    background: black;
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* SHOP */
+
+.shop {
+    background: #f9f8f5;
+}
+
+.shop-toolbar {
+    margin: 35px 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filters button {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    background: none;
+    font-size: 9px;
+}
+
+.filters button.active,
+.filters button:hover {
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+.shop-toolbar select {
+    padding: 8px;
+    border: none;
+    background: transparent;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.product {
+    background: white;
+}
+
+.product-image {
+    height: 270px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image .shirt {
+    width: 150px;
+    height: 190px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    clip-path: polygon(
+        25% 0, 40% 0, 45% 8%, 55% 8%, 60% 0,
+        75% 0, 100% 18%, 86% 42%, 77% 34%,
+        77% 100%, 23% 100%, 23% 34%,
+        14% 42%, 0 18%
+    );
+    transition: .3s;
+}
+
+.product:hover .shirt {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.product-image .label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--red);
+    color: white;
+    padding: 6px;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.add-cart {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.product-info {
+    padding: 16px;
+}
+
+.product-info small {
+    color: #999;
+    font-size: 8px;
+}
+
+.product-info h3 {
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+.product-info strong {
+    font-size: 13px;
+}
+
+/* CUSTOM */
+
+.custom {
+    background: var(--red);
+    color: white;
+    padding: 80px 8%;
+}
+
+.custom > span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.custom h2 {
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin: 55px 0;
+}
+
+.custom h2 strong {
+    color: #171717;
+}
+
+.custom-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.custom-bottom p {
+    max-width: 450px;
+    font-size: 12px;
+    line-height: 2;
+    color: #ffe2de;
+}
+
+/* NFC */
+
+.nfc {
+    padding: 100px 8%;
+    background: #171717;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 8%;
+}
+
+.nfc-content > p {
+    color: #aaa;
+}
+
+.nfc-steps {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    display: grid;
+    gap: 18px;
+}
+
+.nfc-steps div {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.nfc-steps b {
+    color: var(--red);
+    margin-right: 15px;
+}
+
+.nfc-visual {
+    height: 400px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle, #383838, #171717 65%);
+}
+
+.nfc-phone {
+    width: 190px;
+    height: 340px;
+    border: 5px solid #888;
+    border-radius: 28px;
+    padding: 9px;
+    background: black;
+    transform: rotate(8deg);
+    z-index: 2;
+}
+
+.phone-content {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(150deg, #a33c2c, #171717);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.phone-content h3 {
+    font-size: 25px;
+    margin: 30px 0;
+}
+
+.phone-content p {
+    font-size: 9px;
+}
+
+.phone-content small {
+    font-size: 7px;
+    margin-top: 10px;
+}
+
+.nfc-circle {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    width: 120px;
+    height: 120px;
+    border: 1px solid var(--red);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* MANIFESTO */
+
+.manifesto {
+    text-align: center;
+    padding: 100px 5%;
+    background: #e8e5de;
+}
+
+.manifesto > span,
+.manifesto > small {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.manifesto h2 {
+    font-size: clamp(30px, 5vw, 60px);
+    line-height: 1.2;
+    margin: 30px 0;
+    letter-spacing: -2px;
+}
+
+.manifesto h2 strong {
+    color: var(--red);
+}
+
+/* FOOTER */
+
+.footer {
+    background: #111;
+    color: white;
+    padding: 65px 8% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 30px;
+    padding-bottom: 55px;
+}
+
+.footer-grid p {
+    color: #888;
+    font-size: 11px;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+.footer-grid h4 {
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-grid > div > a:not(.logo) {
+    display: block;
+    color: #aaa;
+    font-size: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-logo {
+    display: inline-block;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 9px;
+}
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: #111;
+    color: white;
+    padding: 15px 25px;
+    font-size: 11px;
+    opacity: 0;
+    transition: .3s;
+    z-index: 200;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .navigation {
+        gap: 12px;
+    }
+
+    .navigation a {
+        font-size: 9px;
+    }
+
+    .category-grid,
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        height: 70px;
+        padding: 0 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 3;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        background: var(--white);
+        flex-direction: column;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+        letter-spacing: -5px;
+    }
+
+    .hero-visual {
+        min-height: 370px;
+    }
+
+    .hero-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-shirt {
+        width: 205px;
+        height: 260px;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .category {
+        height: 240px;
+        padding: 15px;
+    }
+
+    .category h3 {
+        font-size: 21px;
+    }
+
+    .collection {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-art {
+        min-height: 380px;
+    }
+
+    .collection-content {
+        padding: 60px 7%;
+    }
+
+    .shop-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .products {
+        gap: 9px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product-image .shirt {
+        width: 115px;
+        height: 150px;
+    }
+
+    .custom {
+        padding: 65px 7%;
+    }
+
+    .custom h2 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .custom-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nfc {
+        grid-template-columns: 1fr;
+        padding: 70px 7%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
